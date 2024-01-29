@@ -8,7 +8,9 @@ To get the raw complete data for this competition, you can download the transcri
 
 In this competition, we select only ten 1200*1200 patches from the original dataset for training and testing. These ten patches have the highest gene counts. The selected patches are as follows:
 `'6000/9600/1200/1200', '7200/8400/1200/1200', '8400/3600/1200/1200', '4800/1200/1200/1200', '3600/1200/1200/1200', '8400/6000/1200/1200', '8400/4800/1200/1200', '4800/10800/1200/1200', '7200/1200/1200/1200', '6000/1200/1200/1200'`
-in a format `start row index/start column index/patchsize/patchsize`.
+(`'start row index/start column index/patchsize/patchsize'`).
+
+<span style="color:red">The dataset of this competition can be download from</span> [here.](https://drive.google.com/file/d/1s5mNr_dLLB_VKmHV2_GyiVS9sXj-TjHp/view?usp=drive_linkhttps://drive.google.com/file/d/1s5mNr_dLLB_VKmHV2_GyiVS9sXj-TjHp/view?usp=drive_link)
 
 The stain images are stored in `tiff` folder. They are 8-bit DNA Fluorescent stains. And the corresponding gene expressions are in `gene` folder. They follow the following format in a tab-delimited file:
 ```
