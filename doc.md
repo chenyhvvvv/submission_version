@@ -42,7 +42,7 @@ You can also refer to the source code of the paper to know how to [preprocess th
     │       ├── raw_stain_6000/1200/1200/1200.tif  # 8-bit Stain image of patch 6000/1200/1200/1200
     │       ├── ... (Other 9 patches)
     ├── document
-    │   ├── competition.ipynb       # Competition description
+    │   ├── doc.md       # Competition description
     │   ├── evaluation.ipynb    # Evaluation code
     │   ├── preprocess_demo.ipynb # Preprocess demo
     └── ...
