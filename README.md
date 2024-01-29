@@ -42,12 +42,20 @@ You can also refer to the source code of the paper to know how to [preprocess th
     │       ├── raw_stain_6000/1200/1200/1200.tif  # 8-bit Stain image of patch 6000/1200/1200/1200
     │       ├── ... (Other 9 patches)
     ├── document
-    │   ├── doc.md       # Competition description
-    │   ├── evaluation.ipynb    # Evaluation code
+    │   ├── README.md       # Competition description
+    │   ├── evaluation.ipynb    # Evaluation demo
     │   ├── preprocess_demo.ipynb # Preprocess demo
+    │   ├── evaluation.py   # Evaluation code from SCS
     └── ...
 ## Preprocess demo
 See the notebook `preprocess_demo.ipynb` for details. Since the patch data provided in this competition is already preprocessed, this notebook is only for demonstration purpose and show you how to deal with the other patches in the large scale mouse brain dataset. You can use it to get familiar with the data. The ten pairs of stain image and gene expression data can be used directly for your model.
 
 ## Evaluation
 See the notebook `evaluation.ipynb` for details.
+
+## Reference
+```
+Chen, H., Li, D. & Bar-Joseph, Z.
+SCS: cell segmentation for high-resolution spatial transcriptomics.
+Nat Methods (2023). https://doi.org/10.1038/s41592-023-01939-3
+```
