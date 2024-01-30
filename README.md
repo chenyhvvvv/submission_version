@@ -32,29 +32,29 @@ You can also refer to the source code of the paper to know how to [preprocess th
 ## File structure
     .
     ├── dataset
-    │   ├── gene                # Gene expression data
-    │       ├── patch_tsv_6000/1200/1200/1200.tsv  # Gene expression data of patch 6000/1200/1200/1200
+    │   ├── gene                                           # Gene expression data
+    │       ├── patch_tsv_6000/1200/1200/1200.tsv          # Gene expression data of patch 6000/1200/1200/1200
     │       ├── ... (Other 9 patches)
-    │   ├── seg                 # Segmentation results
-    │       ├── mask_6000_1200_1200_1200.png  # Segmentation mask fig by SCS of patch 6000/1200/1200/1200
-    │       ├── spot2cell_SCS_6000_1200_1200_1200.txt  # Spot to cell mapping by SCS of patch 6000/1200/1200/1200
+    │   ├── seg                                            # Segmentation results
+    │       ├── mask_6000_1200_1200_1200.png               # Segmentation mask fig by SCS of patch 6000/1200/1200/1200
+    │       ├── spot2cell_SCS_6000_1200_1200_1200.txt      # Spot to cell mapping by SCS of patch 6000/1200/1200/1200
     │       ├── spot2cell_cellpose_6000_1200_1200_1200.txt # Spot to cell mapping by Cellpose of patch 6000/1200/1200/1200
-    │       ├── spot2nucl_6000_1200_1200_1200.txt # Spot to cell mapping by nucleus segmentation of patch 6000/1200/1200/1200
+    │       ├── spot2nucl_6000_1200_1200_1200.txt          # Spot to cell mapping by nucleus segmentation of patch 6000/1200/1200/1200
     │       ├── ... (Other 9 patches)
-    │   ├── tiff                # Stain images
-    │       ├── raw_stain_6000/1200/1200/1200.tif  # 8-bit Stain image of patch 6000/1200/1200/1200
+    │   ├── tiff                                           # Stain images
+    │       ├── raw_stain_6000/1200/1200/1200.tif          # 8-bit Stain image of patch 6000/1200/1200/1200
     │       ├── ... (Other 9 patches)
     ├── document
-    │   ├── README.md       # Competition description
-    │   ├── evaluation.ipynb    # Evaluation demo
-    │   ├── preprocess_demo.ipynb # Preprocess demo
-    │   ├── evaluation.py   # Evaluation code from SCS
+    │   ├── README.md                                      # Competition description
+    │   ├── evaluation.ipynb                               # Evaluation demo
+    │   ├── preprocess_demo.ipynb                          # Preprocess demo
+    │   ├── evaluation.py                                  # Evaluation code from SCS
     └── ...
 ## Preprocess demo
-See the notebook `preprocess_demo.ipynb` for details. Since the patch data provided in this competition is already preprocessed, this notebook is only for demonstration purpose and show you how to deal with the other patches in the large scale mouse brain dataset. You can use it to get familiar with the data. The ten pairs of stain image and gene expression data can be used directly for your model.
+See the notebook [preprocess_demo.ipynb](preprocess_demo.ipynb) for details. Since the patch data provided in this competition is already preprocessed, this notebook is only for demonstration purpose and show you how to deal with the other patches in the large scale mouse brain dataset. You can use it to get familiar with the data. The ten pairs of stain image and gene expression data can be used directly for your model.
 
 ## Evaluation
-See the notebook `evaluation.ipynb` for details.
+See the notebook [evaluation.ipynb](evaluation.ipynb) for details.
 
 ## References
 <a id="1">[1]</a> 
