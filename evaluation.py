@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 
 script, bin_file, startx, starty, patchsize, nucl_seg, cell_seg1, cell_seg2 = argv
 
+verbose = False
+
 def bin2exp():
     #find xmin ymin
     xall = []
@@ -16,7 +18,7 @@ def bin2exp():
     df = pd.read_csv(bin_file, sep='\t')
     xmin = df['x'].min()
     ymin = df['y'].min()
-    print(xmin, ymin)
+    # print(xmin, ymin)
 
     #find all the genes in the range
     geneid = {}
@@ -31,7 +33,7 @@ def bin2exp():
                     geneid[gene] = genecnt
                     allgenes.append(gene)
                     genecnt += 1
-    print(genecnt)
+    print(f"total gene number: {genecnt}")
 
     posexp = lil_matrix((int(patchsize) * int(patchsize), genecnt), dtype=np.int8)
     with open(bin_file) as fr:
@@ -133,16 +135,21 @@ for nu in nucleus2cell1:
                 corr_seg2.append(0)
             else:
                 corr_seg2.append(r)
-        print(nu, len(int_part), len(diff_seg1), len(diff_seg2), (nucleus2cell1[nu], len(seg1_cell[nucleus2cell1[nu]])), (nucleus2cell2[nu], len(seg2_cell[nucleus2cell2[nu]])))
-        print('mean corr_seg1:', np.mean(corr_seg1), 'mean corr_seg2:', np.mean(corr_seg2), 'median corr_seg1:', np.median(corr_seg1), 'median corr_seg2:', np.median(corr_seg2))
+        if verbose:
+            print(nu, len(int_part), len(diff_seg1), len(diff_seg2), (nucleus2cell1[nu], len(seg1_cell[nucleus2cell1[nu]])), (nucleus2cell2[nu], len(seg2_cell[nucleus2cell2[nu]])))
+            print('mean corr_seg1:', np.mean(corr_seg1), 'mean corr_seg2:', np.mean(corr_seg2), 'median corr_seg1:', np.median(corr_seg1), 'median corr_seg2:', np.median(corr_seg2))
+if not verbose:
+    print('mean corr_seg1:', np.mean(corr_seg1), 'mean corr_seg2:', np.mean(corr_seg2), 'median corr_seg1:', np.median(corr_seg1), 'median corr_seg2:', np.median(corr_seg2))
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 data = [corr_seg1, corr_seg2]
 _, p = kruskal(corr_seg1, corr_seg2)
-print(p, len(corr_seg1))
+print(f"Kruskal-Wallis H-test p-value: {p}, Sample num: {len(corr_seg1)}")
 fig, ax = plt.subplots()
 ax.boxplot(data)
 
+if not os.path.exists('results'):
+    os.makedirs('results')
 plt.savefig('results/r_boxplt_' + startx + ':' + starty + ':' + patchsize + ':' + patchsize + '.png')
