@@ -14,9 +14,10 @@ In this competition, we select only ten 1200*1200 patches from the original data
 
 The stain images are stored in `tiff` folder. They are 8-bit DNA Fluorescent stains. And the corresponding gene expressions are in `gene` folder. They follow the following format in a tab-delimited file:
 ```
-geneID  row  column  counts
+geneID          row     column      counts
+0610009B22Rik   426     1021        3
 ```
-For example, a geneID `0610009B22Rik` lies in (426,1021) with gene counts 3. The corresponding line in the gene expression file is `0610009B22Rik  426 1021  3`.
+means a geneID `0610009B22Rik` lies in (426,1021) with gene counts 3.
 
 The segmentation[[2]](#2) results by [SCS](https://doi.org/10.1038/s41592-023-01939-3) are stored in `seg` folder. For each patch, there are several files:
 
